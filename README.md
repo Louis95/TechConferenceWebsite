@@ -63,9 +63,15 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| *Azure Postgres Database* |*basic compute gen5 & basic storage*|$1.45|
+| *Azure Service Bus*   |    --     |       < $0.01      
+| *SendGrid for Azure*   |        Free Tier        |  $0 
+|*Azure Storage Account* | bandwidth & tables & tiered block blob| < $0.01
+| *Azure App Service* | Free Tier| $0
+| *Azure App Service Plan* | Basic Tier |  < $0.0.1
+| *Azure Cache for Redi* | Basic tier | $0.22
 
 ## Architecture Explanation
-This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+For this app, which is not so big we choose to deploy it in Azure because the SaaS service for Web Apps and Serveless Apps. In Azure, for Web and Function Apps we can use the free tier and also scale up or down basead on the trafic of our app. Given that we have decoupled the app into frontend and functions also we enable the ability to do separate releases and scales which is better for the cost-effectiveness.
+
+
